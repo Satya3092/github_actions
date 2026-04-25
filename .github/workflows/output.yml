@@ -1,6 +1,6 @@
 name: output-demo
-in: push
-job:
+on: push
+jobs:
   job1:
     runs-on: ubuntu-latest
     steps:
@@ -8,4 +8,4 @@ job:
         id: step1
         run: echo "version 0.0.1" >> $GITHUB_OUTPUT
       - name: step two
-        run: echo "the version is ${{ step.step1.outputs.version }} "
+        run: echo "the version is ${{ stepS.step1.outputs.version }}"
