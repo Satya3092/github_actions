@@ -1,4 +1,4 @@
-name: if-demo
+name: or-demo
 
 on:
   push:
@@ -11,9 +11,6 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: run only on main branch
-        if: ${{ github.ref == 'refs/heads/main' }}
-        run: echo "running this step on main"
-
-      - name: run always
-        run: echo "running this step always"
+      - name: run for satya or pooja
+        if: ${{ github.actor == 'satya' || github.actor == 'pooja' }}
+        run: echo "this is ok"
